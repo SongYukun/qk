@@ -1,0 +1,16 @@
+前提安装node
+
+node -v   测试node版本(>6.9)
+npm -v   版本(>3.10)
+
+npm install --global vue-cli(安装全局)
+vue init webpack my-project
+cd my-project
+npm install
+
+
+路由模块:vue-router --save-dev
+
+vue-resource模块：npm install vue-resource --save-dev
+
+http://jsonplaceholder.typicode.com/users
