@@ -1,7 +1,7 @@
 <template>
  <div class="app-container">
      <!-- 1:顶部导航 -->
-     <mt-header fixed title="我的课堂" style="background-color:#fff;color:#f00;"></mt-header>
+     <!-- <mt-header fixed title="我的课堂" style="background-color:#fff;color:#f00;"></mt-header> -->
      <!-- 2:路由显示其他模块 -->
     <router-view></router-view>
     <!-- 3:mui tabbar -->
@@ -24,7 +24,6 @@
 
 <style>
 .app-container{
-  padding-top:40px;
   padding-bottom:50px;
   overflow-x:hidden;
 }

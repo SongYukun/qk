@@ -194,6 +194,9 @@
   
 </script>
 <style>
+.mui-content > .mui-table-view:first-child {
+    margin-top: 0;
+}
 .oa-contact-cell.mui-table .mui-table-cell {
   padding: 11px 0;
   vertical-align: middle;

@@ -1,6 +1,11 @@
 <template>
   <div class="app">
     <!-- 主页的组件HomeContainer.vue -->
+    <!-- 0:头部 -->
+    <div class="h_h">
+      <p><img src="../../assets/index/logo.png"></p>
+      <p><span class="mui-icon mui-icon-search"></span></p>
+    </div>
     <!-- 1:轮播图 -->
     <mt-swipe :auto="4000">
       <mt-swipe-item v-for="item in list" :key="item.id">
@@ -49,26 +54,26 @@
       <h4>畅销好课</h4>
       <ul class="mui-table-view mui-grid-view">
         <li class="mui-table-view-cell mui-media mui-col-xs-6">
-          <router-link to="/home/details/DetailList">
+          <router-link to="home/details/DetailList">
             <img class="mui-media-object" src="../../assets/index/ke01.jpg">
             <div class="mui-media-body">能帮你赚到钱的50节商业思维提升课</div></router-link></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-6">
-          <router-link to="/home/details/DetailList">
+          <router-link to="home/details/DetailList">
             <img class="mui-media-object" src="../../assets/index/ke02.jpg">
             <div class="mui-media-body">25堂通识阅读课带你打破只是边界</div></router-link></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-6">
-          <router-link to="/home/details/DetailList"><img class="mui-media-object" src="../../assets/index/ke03.jpg">
+          <router-link to="home/details/DetailList"><img class="mui-media-object" src="../../assets/index/ke03.jpg">
             <div class="mui-media-body">听得懂得金融思维课</div></router-link></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-6">
-          <router-link to="/home/details/DetailList">
+          <router-link to="home/details/DetailList">
             <img class="mui-media-object" src="../../assets/index/ke04.jpg">
             <div class="mui-media-body">2018让你的年度计划有效实施</div></router-link></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-6">
-          <router-link to="/home/details/DetailList">
+          <router-link to="home/details/DetailList">
             <img class="mui-media-object" src="../../assets/index/ke05.jpg">
             <div class="mui-media-body">和大白一起学PPT演讲</div></router-link></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-6">
-          <router-link to="/home/details/DetailList">
+          <router-link to="home/details/DetailList">
             <img class="mui-media-object" src="../../assets/index/ke06.jpg">
             <div class="mui-media-body">高绩效精英的职场习惯</div></router-link></li>
       </ul>    
@@ -98,26 +103,26 @@
       <h4>畅销好课</h4>
       <ul class="mui-table-view mui-grid-view">  
         <div style="padding:10px 0 0 10px;">
-          <router-link to="/home/details/DetailList">
+          <router-link to="home/details/DetailList">
             <img src="../../assets/index/sub05.png" style="width:100%;">
           </router-link>
           <p style="margin-left:10px;color:#000;font-size:15px">职场人的理财必修课</p>
         </div>
         <li class="mui-table-view-cell mui-media mui-col-xs-6">
-          <router-link to="/home/details/DetailList">
+          <router-link to="home/details/DetailList">
             <img class="mui-media-object" src="../../assets/index/ke07.jpg">
             <div class="mui-media-body">躺着也能赚钱的基金投资课</div>
           </router-link></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-6">
-          <router-link to="/home/details/DetailList">
+          <router-link to="home/details/DetailList">
             <img class="mui-media-object" src="../../assets/index/ke08.jpg">
             <div class="mui-media-body">希尔叫你炒外汇</div></router-link></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-6">
-          <router-link to="/home/details/DetailList">
+          <router-link to="home/details/DetailList">
             <img class="mui-media-object" src="../../assets/index/ke09.jpg">
             <div class="mui-media-body">跟简七学理财</div></router-link></li>
         <li class="mui-table-view-cell mui-media mui-col-xs-6">
-          <router-link to="/home/details/DetailList">
+          <router-link to="home/details/DetailList">
             <img class="mui-media-object" src="../../assets/index/ke10.jpg">
             <div class="mui-media-body">股市价值投资</div></router-link></li>
       </ul>    
@@ -155,6 +160,23 @@
   }
 </script>
 <style>
+.h_h{
+  height: 49px;
+  line-height: 49px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-around;
+}
+.h_h p img{
+  display: block;
+  width: 160px;
+  height: 35px;
+  margin-top: 7px;
+}
+.mui-icon-search:before {
+  display: block;
+  padding-top: 14px;
+}
 /*图片轮播组件高度为0*/
 .app{
   background-color: #fff;

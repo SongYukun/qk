@@ -69,5 +69,9 @@
 .app-container .app_study .mui-content .mui-slider{
 	height: 768px;
 }
+.app-container .app_study .mui-content .mui-slider {
+    height: 768px;
+    margin-top: 44px;
+}
 </style>
 

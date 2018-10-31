@@ -15,17 +15,24 @@
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="1">
         <div class="it_p">
-
+          <div class="j-j-t">
+            <p>能帮你赚到钱的50节商业提升课</p>
+          </div>
         </div>
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
         <div class="it_p">
-
+          <div class="m-l-t">
+            <p>课程学习指南</p>
+          </div>
         </div>
       </mt-tab-container-item>
       <mt-tab-container-item id="3">
         <div class="it_p">
-
+          <div class="p-j-t">
+            <p>全部评价</p>
+            <p>共48个评价</p>
+          </div>
         </div>
       </mt-tab-container-item>
     </mt-tab-container>
@@ -94,7 +101,7 @@
 .it_p{
   width: 100%;
   margin: 0 auto;
-  height: 1500px;
+  height: 450px;
   background: #fff;
   margin-top: 1px;
 }

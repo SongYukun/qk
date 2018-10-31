@@ -14,13 +14,14 @@ Vue.use(Router)
 //2.指定该组件的访问路径
 export default new Router({
   routes: [
-    {path: '/',name: '/home'},
+    {path: '/',redirect:"/home"},
     {path:'/home',component:HomeContainer},
     {path:'/study',component:StudyContainer},
     {path:'/shop',component:ShopContainer},
     {path:'/account',component:AccountContainer},
     {path:'/home/details/List',component:List},
     {path:'/home/details/DetailList',component:DetailList},
-    {path:'/about',component:AboutCount}
+    {path:'/about',component:AboutCount},
+    {path:'*',redirect:"/home"}
   ],linkActiveClass:"mui-active" //覆盖默认路由高亮类
 })
