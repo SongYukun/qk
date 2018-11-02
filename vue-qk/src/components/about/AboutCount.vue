@@ -1,26 +1,38 @@
 <template>   
     <div class="app_search">
-        <div class="search_title">
-            <p>登录</p>
-        </div>
-        <div>
-            <input type="text" placeholder="邮箱手机号"><br>
-            <input type="password" placeholder="密码"><br>
-            <mt-button type="primary" size="large"><router-link to="home">登录</router-link></mt-button>
-        </div>
-        <div class="search_login">
-            <a href="#"><p>忘记密码?</p></a>
-            <a href="#"><p>手机注册</p></a>
-        </div>
-        <div class="search_tip">
-            <p>第三方账号直接登录</p>
-        </div>
-        <div class="search_other">
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
-            <a href="#"><img src="" alt=""></a>
-        </div>
+        <header class="mui-bar mui-bar-nav">
+			<header id="head" class="mui-bar mui-bar-transparent">
+			<router-link class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" to="/account">
+            </router-link>
+            <h1 class="mui-title">注册</h1>
+		</header>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>账号</label>
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+				</div>
+				<div class="mui-input-row">
+					<label>确认</label>
+					<input id='password_confirm' type="password" class="mui-input-clear mui-input" placeholder="请确认密码">
+				</div>
+				<div class="mui-input-row">
+					<label>邮箱</label>
+					<input id='email' type="email" class="mui-input-clear mui-input" placeholder="请输入邮箱">
+				</div>
+			</form>
+			<div class="mui-content-padded">
+				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary" @click="click()">注册</button>
+			</div>
+			<div class="mui-content-padded">
+				<p>注册真实可用，注册成功后的用户可用于登录。</p>
+			</div>
+		</div>
     </div>
 </template>
 <script>
@@ -29,7 +41,11 @@
             return {}
         },
         methods:{
-
+            click(){
+                this.$router.push({
+                path:"/account"
+                })
+            }
         },
         created(){
             
@@ -37,33 +53,28 @@
     }
 </script>
 <style>
-*{
-    box-sizing:border-box;
+.area {
+    margin: 20px auto 0px auto;
 }
-.app_search .search_title{
-    text-align:center;
-    margin-top: 10px;
+.mui-input-group:first-child {
+    margin-top: 20px;
 }
-.app_search .search_title p{
-    color:black;
-    font-size:16px;
+.mui-input-group label {
+    width: 22%;
 }
-.app_search .search_login{
-    padding-top:25px;
-    display:flex;
-    justify-content: space-between;
+.mui-input-row label~input,
+.mui-input-row label~select,
+.mui-input-row label~textarea {
+    width: 78%;
 }
-.app_search .search_tip{
-    text-align: center;
-    padding-top:20px;
+.mui-checkbox input[type=checkbox],
+.mui-radio input[type=radio] {
+    top: 6px;
 }
-.app_search .search_other{
-    display:flex;
-    justify-content: space-around;
-    padding-top:50px;
+.mui-content-padded {
+    margin-top: 25px;
 }
-.app_search .search_other img{
-    width:32px;
-    height:32px;
+.mui-btn {
+    padding: 10px;
 }
 </style>
