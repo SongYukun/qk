@@ -2,40 +2,34 @@
     <div class="app_search">
         <header class="mui-bar mui-bar-nav">
 			<header id="head" class="mui-bar mui-bar-transparent">
-			<router-link class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" to="/account">
-            </router-link>
-            <h1 class="mui-title">注册</h1>
-		</header>
+				<router-link class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" to="/account">
+				</router-link>
+				<h1 class="mui-title">注册</h1>
+			</header>
 		</header>
 		<div class="mui-content">
-			<form class="mui-input-group">
+			<form class="mui-input-group" action="/user/add">
 				<div class="mui-input-row">
 					<label>账号</label>
-					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号" name="uname">
 				</div>
 				<div class="mui-input-row">
 					<label>密码</label>
-					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码" name="upwd">
 				</div>
 				<div class="mui-input-row">
 					<label>确认</label>
-					<input id='password_confirm' type="password" class="mui-input-clear mui-input" placeholder="请确认密码">
-				</div>
-				<div class="mui-input-row">
-					<label>邮箱</label>
-					<input id='email' type="email" class="mui-input-clear mui-input" placeholder="请输入邮箱">
+					<input id='password_confirm' type="password" class="mui-input-clear mui-input" placeholder="请确认密码" name="upwd">
 				</div>
 			</form>
 			<div class="mui-content-padded">
-				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary" @click="click()">注册</button>
-			</div>
-			<div class="mui-content-padded">
-				<p>注册真实可用，注册成功后的用户可用于登录。</p>
+				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary" @click="click()" type="submit">注册</button>
 			</div>
 		</div>
     </div>
 </template>
 <script>
+	import { Toast } from 'mint-ui';
     export default{
         data(){
             return {}

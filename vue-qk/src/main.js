@@ -6,12 +6,16 @@ import router from './router/index'
 
 import 'mint-ui/lib/style.css'
 import './lib/mui/css/mui.css'
+import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
+import axios from 'axios'
+
+axios.default.withCredentials=true;
 
 Vue.config.productionTip = false
 
 //1.引入组件
-import {Header,Swipe,SwipeItem,Button,TabContainer,TabContainerItem,Navbar,TabItem} from "mint-ui"
+import {Header,Swipe,SwipeItem,Button,TabContainer,TabContainerItem,Navbar,TabItem,Search} from "mint-ui"
 //2.注册组件
 Vue.component(Header.name,Header);
 Vue.component(Swipe.name,Swipe);
@@ -21,6 +25,7 @@ Vue.component(Navbar.name, Navbar);
 Vue.component(TabItem.name, TabItem);
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
+Vue.component(Search.name, Search);
 //3.引入VueResource到当前的项目中
 import VueResource from "vue-resource";
 //4.加载VueResource

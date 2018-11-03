@@ -4,7 +4,7 @@
     <!-- 0:头部 -->
     <div class="h_h">
       <p><img src="../../assets/index/logo.png"></p>
-      <p><span class="mui-icon mui-icon-search"></span></p>
+      <p @click="search()"><span class="mui-icon mui-icon-search"></span></p>
     </div>
     <!-- 1:轮播图 -->
     <mt-swipe :auto="4000">
@@ -13,7 +13,7 @@
       </mt-swipe-item>
     </mt-swipe>
     <!-- 列表 -->
-    <div class='index-nav'>
+    <div class='index-nav' v-cloak>
       <router-link v-for="item in nav" :key="item.id" :to="item.href" class='nav-item'>
         <img :src='item.img_url'>
         <span>{{item.title}}</span>
@@ -138,6 +138,11 @@
             Toast("图片加载失败...");
           }
         })
+      },
+      search(){
+         this.$router.push({
+          path:"/home/search"
+        })
       }
     },
     created(){
@@ -150,6 +155,9 @@
   }
 </script>
 <style>
+[v-cloak]{
+  display: none;
+}
 .h_h{
   height: 49px;
   line-height: 49px;

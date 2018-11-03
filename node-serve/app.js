@@ -1,5 +1,7 @@
 const express=require("express");
-const routerImgList=require("./router/imagelist");
+const session=require("express-session");
+const imgList=require("./router/imagelist");
+const users=require("./router/users")
 
 const bodyParse=require("body-parser");
 
@@ -16,4 +18,10 @@ app.listen(3000,()=>{
 });
 
 app.use(express.static(__dirname+"/public"));
-app.use("/imagelist",routerImgList);
+app.use(session({
+	secret:'随机字符串',
+	resave:false,
+	saveUninitialized:true
+}));
+app.use("/imagelist",imgList);
+app.use("/users",users);

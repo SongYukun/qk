@@ -8,9 +8,9 @@ CREATE TABLE qk_user(
   uname VARCHAR(25),
   upwd VARCHAR(32)
 );
-INSERT INTO qk_user VALUES(null,'Tom',md5('123'));
-INSERT INTO qk_user VALUES(null,'dongdong',md5('123'));
-INSERT INTO qk_user VALUES(null,'jerry',md5('123'));
+INSERT INTO qk_user VALUES
+  (null,'dongdong','123'),
+  (null,'dingding','123456');
 
 #图片轮播表 qk_imagelist
 CREATE TABLE qk_imagelist(

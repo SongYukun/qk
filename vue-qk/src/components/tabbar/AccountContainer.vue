@@ -7,26 +7,16 @@
 			<form id='login-form' class="mui-input-group">
 				<div class="mui-input-row">
 					<label>账号</label>
-					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号">
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号" name="uname" v-model="uname">
 				</div>
 				<div class="mui-input-row">
 					<label>密码</label>
-					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码" name="upwd" v-model="upwd">
 				</div>
 			</form>
-			<form class="mui-input-group">
-				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell">
-						自动登录
-						<div id="autoLogin" class="mui-switch">
-							<div class="mui-switch-handle"></div>
-						</div>
-					</li>
-				</ul>
-			</form>
 			<div class="mui-content-padded">
-				<button id='login' type="button" class="mui-btn mui-btn-block mui-btn-primary" @click="login()">登录</button>
-				<div class="link-area"><a id='reg'>注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
+				<button id='login' type="button" class="mui-btn mui-btn-block mui-btn-primary" @click="per()">登录</button>
+				<div class="link-area"><a id='reg' @click="login()">注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
 				</div>
 			</div>
 			<div class="mui-content-padded oauth-area">
@@ -36,14 +26,49 @@
   </div>
 </template>
 <script>
+  import qs from "qs";
+  import { Toast } from 'mint-ui';
   export default{
     data(){
-      return {}
+      return {
+        // keyword:"",
+        // islogin:false
+        uname:"",
+        upwd:""
+      }
     },
+    // mounted() {
+    //   var self=this;
+    //   this.$http.get("http://localhost:3000/users/islogin").then(res=>{
+    //     if(res.data.ok==1)
+    //       self.islogin=true;
+    //     else
+    //       self.islogin=false;
+    //   })
+    // },
     methods:{
+      per(){
+        var self=this;
+        this.$http.post("http://localhost:3000/users/signin",qs.stringify({uname:self.uname,upwd:self.upwd})).then(res=>{
+          if(res.data.ok==1){
+            Toast('登录成功,返回首页');
+            self.$router.push({path:"/person"})
+          }else{
+            Toast('用户名或密码错误！');
+          }
+        })
+        // this.$router.push({
+        //   path:"/about/person"
+        // })
+      },
       login(){
         this.$router.push({
           path:"/about"
+        })
+      },
+      person(){
+        this.$router.push({
+          path:"/person"
         })
       }
     },

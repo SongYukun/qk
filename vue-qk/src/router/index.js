@@ -10,6 +10,8 @@ import DetailList from "../components/details/DetailList.vue"
 import List from "../components/details/List.vue"
 import AboutCount from "../components/about/AboutCount.vue"
 Vue.use(Router)
+import Search from "../components/search/Search.vue"
+import Person from "../components/about/Person.vue"
 
 //2.指定该组件的访问路径
 export default new Router({
@@ -22,6 +24,8 @@ export default new Router({
     {path:'/home/details/List',component:List},
     {path:'/home/details/DetailList',component:DetailList},
     {path:'/about',component:AboutCount},
+    {path:'/person',component:Person},
+    {path:'/search',component:Search},
     {path:'*',redirect:"/home"}
   ],linkActiveClass:"mui-active" //覆盖默认路由高亮类
 })
