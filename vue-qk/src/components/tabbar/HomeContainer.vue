@@ -13,7 +13,7 @@
       </mt-swipe-item>
     </mt-swipe>
     <!-- 列表 -->
-    <div class='index-nav' v-cloak>
+    <div class='index-nav'>
       <router-link v-for="item in nav" :key="item.id" :to="item.href" class='nav-item'>
         <img :src='item.img_url'>
         <span>{{item.title}}</span>
@@ -141,7 +141,7 @@
       },
       search(){
          this.$router.push({
-          path:"/home/search"
+          path:"/search"
         })
       }
     },
@@ -155,9 +155,6 @@
   }
 </script>
 <style>
-[v-cloak]{
-  display: none;
-}
 .h_h{
   height: 49px;
   line-height: 49px;

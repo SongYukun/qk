@@ -15,10 +15,7 @@ router.get("/nav",(req,res)=>{
   var sql="SELECT id, img_url, href, title FROM qk_nav";
   pool.query(sql,(err,result)=>{
     if(err) throw err;
-    // res.send({code:1,msg:result})
-    setTimeout(function(){
-      res.send(result);
-    },3000)
+    res.send({code:1,msg:result})
   })
 })
 

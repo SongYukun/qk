@@ -2,6 +2,7 @@ const express=require("express");
 const session=require("express-session");
 const imgList=require("./router/imagelist");
 const users=require("./router/users")
+const list=require("./router/list")
 
 const bodyParse=require("body-parser");
 
@@ -25,3 +26,4 @@ app.use(session({
 }));
 app.use("/imagelist",imgList);
 app.use("/users",users);
+app.use("/list",list)
