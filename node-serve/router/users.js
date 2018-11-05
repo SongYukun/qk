@@ -21,8 +21,8 @@ router.post('/add',(req,res)=>{
   });
 });
 
-router.post("/signin",(req,res)=>{
-  var {uname,upwd}=req.body;
+router.get("/signin",(req,res)=>{
+  var {uname,upwd}=req.query;
   var sql="select * from qk_user where uname=? and upwd=?";
   pool.query(sql,[uname,upwd],(err,result)=>{
     if(err) console.log(err);

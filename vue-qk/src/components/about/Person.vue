@@ -26,7 +26,7 @@
           <a class="mui-navigate-right">我的优惠券</a>
       </li>
       <li class="mui-table-view-cell">
-          <a class="mui-navigate-right">我的我的购物车</a>
+          <a class="mui-navigate-right">我的购物车</a>
       </li>
       <li class="mui-table-view-cell">
           <a class="mui-navigate-right">我的学习卡</a>

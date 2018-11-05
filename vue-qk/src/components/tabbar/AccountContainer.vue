@@ -3,7 +3,7 @@
     <header class="mui-bar mui-bar-nav">
 			<h1 class="mui-title">登录</h1>
 		</header>
-		<div class="mui-content">
+		<div class="mui-content" style="padding-top:44px !important;">
 			<form id='login-form' class="mui-input-group">
 				<div class="mui-input-row">
 					<label>账号</label>

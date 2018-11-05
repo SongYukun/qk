@@ -7,7 +7,7 @@
 				<h1 class="mui-title">注册</h1>
 			</header>
 		</header>
-		<div class="mui-content">
+		<div class="mui-content" style="padding-top:44px !important;">
 			<form class="mui-input-group" action="/user/add">
 				<div class="mui-input-row">
 					<label>账号</label>

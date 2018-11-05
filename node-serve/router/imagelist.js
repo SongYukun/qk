@@ -20,7 +20,7 @@ router.get("/nav",(req,res)=>{
 })
 
 router.get("/productt",(req,res)=>{
-  var sql="SELECT id,title, img_url, href, avatar FROM qk_product WHERE avatar=1";
+  var sql="SELECT id, title, img_url, href, avatar, detail, per, make FROM qk_product WHERE avatar=1";
   pool.query(sql,(err,result)=>{
     if(err) throw err;
     res.send({code:1,msg:result})
@@ -28,7 +28,7 @@ router.get("/productt",(req,res)=>{
 })
 
 router.get("/productb",(req,res)=>{
-  var sql="SELECT id,title, img_url, href, avatar FROM qk_product WHERE avatar=2";
+  var sql="SELECT id, title, img_url, href, avatar, detail, per, make FROM qk_product WHERE avatar=2";
   pool.query(sql,(err,result)=>{
     if(err) throw err;
     res.send({code:1,msg:result})

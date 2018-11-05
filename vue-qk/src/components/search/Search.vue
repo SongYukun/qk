@@ -9,7 +9,7 @@
 				<h1 class="mui-title">课程检索</h1>
 			</header>
 		</header>
-   <mt-search></mt-search>
+   <mt-search style="height:45px !important;"></mt-search>
 			<ul class="mui-table-view mui-table-view-striped mui-table-view-condensed">
 				<li class="mui-table-view-cell" v-for="item in list" :key="item.id">
 					<div class="mui-slider-cell">
@@ -65,9 +65,9 @@
   z-index: 0;
 }
 .mint-search {
-  height: 100%;
+  /* height: 100%; */
   /* height: 100vh; */
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-top: 46px;
 }
 input[type="search"] {

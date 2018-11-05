@@ -24,10 +24,9 @@
 
 <style>
 .app-container{
-  padding-bottom:50px;
-  overflow-x:hidden;
+   padding-bottom:160px; 
+   overflow-x:hidden; 
 }
-
 .mui-bar-tab .mui-tab-item-tao.mui-active {
   color: #007aff;
 }
