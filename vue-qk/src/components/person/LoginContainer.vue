@@ -15,8 +15,8 @@
 				</div>
 			</form>
 			<div class="mui-content-padded">
-				<button id='login' type="button" class="mui-btn mui-btn-block mui-btn-primary" @click="per()">登录</button>
-				<div class="link-area"><a id='reg' @click="login()">注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
+				<button id='login' type="button" class="mui-btn mui-btn-block mui-btn-primary" @click="login()">登录</button>
+				<div class="link-area"><a id='reg' @click="register">注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
 				</div>
 			</div>
 			<div class="mui-content-padded oauth-area">
@@ -31,98 +31,87 @@
   export default{
     data(){
       return {
-        // keyword:"",
-        // islogin:false
         uname:"",
         upwd:""
       }
     },
-    // mounted() {
-    //   var self=this;
-    //   this.$http.get("http://localhost:3000/users/islogin").then(res=>{
-    //     if(res.data.ok==1)
-    //       self.islogin=true;
-    //     else
-    //       self.islogin=false;
-    //   })
-    // },
     methods:{
-      per(){
-        var self=this;
-        this.$http.post("http://localhost:3000/users/signin",qs.stringify({uname:self.uname,upwd:self.upwd})).then(res=>{
-          if(res.data.ok==1){
-            Toast('登录成功,返回首页');
-            self.$router.push({path:"/person"})
-          }else{
-            Toast('用户名或密码错误！');
-          }
-        })
-        // this.$router.push({
-        //   path:"/about/person"
-        // })
-      },
+      // per(){
+      //   var self=this;
+      //   this.$http.post("http://localhost:3000/users/signin",qs.stringify({uname:self.uname,upwd:self.upwd})).then(res=>{
+      //     console.log(res.data)
+      //     if(res.data.ok==1){
+      //       Toast('登录成功');
+      //       self.$router.push({path:"/home"})
+      //     }else{
+      //       Toast('用户名或密码错误！');
+      //     }
+      //   })
+      // },
       login(){
         this.$router.push({
-          path:"/about"
+          path:"/home"
         })
       },
-      person(){
+      register(){
         this.$router.push({
-          path:"/person"
+          path:"/register"
         })
       }
     },
-    created(){}
+    created(){
+
+    }
   }
 </script>
 <style>
-.area {
+.mui-content .area {
   margin: 20px auto 0px auto;
 }
 
-.mui-input-group {
+.mui-content .mui-input-group {
   margin-top: 10px;
 }
 
-.mui-input-group:first-child {
+.mui-content .mui-input-group:first-child {
   margin-top: 20px;
 }
 
-.mui-input-group label {
+.mui-content .mui-input-group label {
   width: 22%;
 }
 
-.mui-input-row label~input,
-.mui-input-row label~select,
-.mui-input-row label~textarea {
+.mui-content .mui-input-row label~input,
+.mui-content .mui-input-row label~select,
+.mui-content .mui-input-row label~textarea {
   width: 78%;
 }
 
-.mui-checkbox input[type=checkbox],
-.mui-radio input[type=radio] {
+.mui-content .mui-checkbox input[type=checkbox],
+.mui-content .mui-radio input[type=radio] {
   top: 6px;
 }
 
-.mui-content-padded {
+.mui-content .mui-content-padded {
   margin-top: 25px;
 }
 
-.mui-btn {
+.mui-content .mui-btn {
   padding: 10px;
 }
 
-.link-area {
+.mui-content .link-area {
   display: block;
   margin-top: 25px;
   text-align: center;
 }
 
-.spliter {
+.mui-content .spliter {
   color: #bbb;
   padding: 0px 8px;
 }
 
-.oauth-area {
+.mui-content .oauth-area {
   position: absolute;
   bottom: 20px;
   left: 0px;
@@ -132,7 +121,7 @@
   margin: 0px;
 }
 
-.oauth-area .oauth-btn {
+.mui-content .oauth-area .oauth-btn {
   display: inline-block;
   width: 50px;
   height: 50px;
@@ -145,11 +134,11 @@
   border-radius: 25px;
 }
 
-.oauth-area .oauth-btn:active {
+.mui-content .oauth-area .oauth-btn:active {
   border: solid 1px #aaa;
 }
 
-.oauth-area .oauth-btn.disabled {
+.mui-content .oauth-area .oauth-btn.disabled {
   background-color: #ddd;
 }
 </style>

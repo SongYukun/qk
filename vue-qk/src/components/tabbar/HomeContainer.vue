@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app_home">
     <!-- 主页的组件HomeContainer.vue -->
     <!-- 0:头部 -->
     <div class="h_h">
@@ -25,11 +25,9 @@
       <!--<h5 style="background-color:#efeff4"></h5>-->
       <h4>畅销好课</h4>
       <ul class="mui-table-view mui-grid-view">
-        <li v-for="item in productt" :key="item.id" class="mui-table-view-cell mui-media mui-col-xs-6">
-          <router-link :to="item.href">
-            <img class="mui-media-object" :src="item.img_url">
-            <div class="mui-media-body">{{item.title}}</div>
-          </router-link>
+        <li v-for="item in productt" :key="item.id" @click="getProducttList1(item.id)" class="mui-table-view-cell mui-media mui-col-xs-6">
+          <img class="mui-media-object" :src="item.img_url">
+          <div class="mui-media-body">{{item.title}}</div>
         </li>
       </ul>    
 		</div>
@@ -46,7 +44,7 @@
     <!--职业发展-->  
     <div style="background-color:#efeff4;height：10px"></div>
     <div class="mui-content" style="background-color:#fff;height:510px;">
-      <h4>畅销好课</h4>
+      <h4>职场发展</h4>
       <ul class="mui-table-view mui-grid-view">  
         <div style="padding:10px 0 0 10px;">
           <router-link :to="lesson[0].href">
@@ -54,7 +52,7 @@
           </router-link>
           <p style="margin-left:10px;color:#000;font-size:15px">{{lesson[0].title}}</p>
         </div>
-        <li v-for="item in productb" :key="item.id" class="mui-table-view-cell mui-media mui-col-xs-6">
+        <li v-for="item in productb" :key="item.id" @click="getProducttList2(item.id)" class="mui-table-view-cell mui-media mui-col-xs-6">
           <router-link :to="item.href">
             <img class="mui-media-object" :src="item.img_url">
             <div class="mui-media-body">{{item.title}}</div>
@@ -119,6 +117,9 @@
           }
         })
       },
+      getProducttList1(id){
+        this.$router.push({path:"/home/details/DetailList/"+id})
+      },
       getTopicList(){
         var url="http://127.0.0.1:3000/imagelist/topic";
         this.$http.get(url).then(result=>{
@@ -139,6 +140,9 @@
           }
         })
       },
+      getProducttList2(id){
+        this.$router.push({path:"/home/details/DetailList/"+id})
+      },
       search(){
          this.$router.push({
           path:"/search"
@@ -155,40 +159,40 @@
   }
 </script>
 <style>
-.h_h{
+.app_home .h_h{
   height: 49px;
   line-height: 49px;
   background-color: #FFFFFF;
   display: flex;
   justify-content: space-around;
 }
-.h_h p img{
+.app_home .h_h p img{
   display: block;
   width: 160px;
   height: 35px;
   margin-top: 7px;
 }
-.mui-icon-search:before {
+.app_home .mui-icon-search:before {
   display: block;
   padding-top: 14px;
 }
 /*图片轮播组件高度为0*/
-.app{
+.app_home{
   background-color: #fff;
 }
-.app .mint-swipe{
+.app_home .mint-swipe{
   height: 200px;
 }
-.app .mint-swipe img{
+.app_home .mint-swipe img{
   width: 100%;
   height: 100%;
 }
 /*列表*/
-.index-nav{
+.app_home .index-nav{
   display: flex;
   flex-wrap: wrap;
 }
-.index-nav .nav-item{
+.app_home .index-nav .nav-item{
   display: flex;
   width: 25%;
   height: 200rpx;
@@ -202,16 +206,16 @@
   border-bottom: 1rpx solid #ddd;
   /*position: relative;*/
 }
-.index-nav .nav-item span{
+.app_home .index-nav .nav-item span{
   display: block;
   margin-top: 10px;
 }
-.index-nav .nav-item img{
+.app_home .index-nav .nav-item img{
   width: 45px;
   height: 45px;
   margin-top: 20px;
 }
-.index-nav .nav-item::after{
+.app_home .index-nav .nav-item::after{
   content:"";
   width: 1rpx;
   height: 100%;
@@ -221,21 +225,21 @@
   background-color: #ccc;
 }
 /*畅销好课*/
-.mui-content{
+.app_home .mui-content{
   height: 456px;
 }
-h4{
+.app_home h4{
   padding-top: 8px;
   padding-left: 5px;
   text-indent: 12px;
 }
-.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
+.app_home .mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
 font-size: 15px;
 margin-top:8px;
 color: #333;
 }
 /*专题*/
-.custom-name {
+.app_home .custom-name {
   line-height: 21px;
   font-size: 17px;
   font-weight: bold;

@@ -1,14 +1,14 @@
 <template>   
-    <div class="app_search">
+    <div class="app_register">
         <header class="mui-bar mui-bar-nav">
 			<header id="head" class="mui-bar mui-bar-transparent">
-				<router-link class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" to="/account">
+				<router-link class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" to="/login">
 				</router-link>
 				<h1 class="mui-title">注册</h1>
 			</header>
 		</header>
 		<div class="mui-content" style="padding-top:44px !important;">
-			<form class="mui-input-group" action="/user/add">
+			<form class="mui-input-group" action="/add">
 				<div class="mui-input-row">
 					<label>账号</label>
 					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号" name="uname">
@@ -23,7 +23,7 @@
 				</div>
 			</form>
 			<div class="mui-content-padded">
-				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary" @click="click()" type="submit">注册</button>
+				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary" @click="login" type="submit">注册</button>
 			</div>
 		</div>
     </div>
@@ -35,40 +35,40 @@
             return {}
         },
         methods:{
-            click(){
+            login(){
                 this.$router.push({
-                path:"/account"
+                	path:"/login"
                 })
             }
         },
         created(){
-            
+           this.login(); 
         }
     }
 </script>
 <style>
-.area {
+.app_register .area {
     margin: 20px auto 0px auto;
 }
-.mui-input-group:first-child {
+.app_register .mui-input-group:first-child {
     margin-top: 20px;
 }
-.mui-input-group label {
+.app_register .mui-input-group label {
     width: 22%;
 }
-.mui-input-row label~input,
-.mui-input-row label~select,
-.mui-input-row label~textarea {
+.app_register .mui-input-row label~input,
+.app_register .mui-input-row label~select,
+.app_register .mui-input-row label~textarea {
     width: 78%;
 }
-.mui-checkbox input[type=checkbox],
-.mui-radio input[type=radio] {
+.app_register .mui-checkbox input[type=checkbox],
+.app_register .mui-radio input[type=radio] {
     top: 6px;
 }
-.mui-content-padded {
+.app_register .mui-content-padded {
     margin-top: 25px;
 }
-.mui-btn {
+.app_register .mui-btn {
     padding: 10px;
 }
 </style>

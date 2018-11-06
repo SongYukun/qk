@@ -1,6 +1,5 @@
 <template>
   <div class="app_search">
-    
    <div class="mui-content">
      <header>
     	<header id="head" class="mui-bar mui-bar-transparent">
@@ -57,20 +56,20 @@
   }
 </script>
 <style>
-.mui-content {
+.app_search .mui-content {
   box-sizing: border-box;
     /* height: 456px; */
 }
-.mui-bar {
+.app_search .mui-bar {
   z-index: 0;
 }
-.mint-search {
+.app_search .mint-search {
   /* height: 100%; */
   /* height: 100vh; */
   /* overflow: hidden; */
   margin-top: 46px;
 }
-input[type="search"] {
+.app_search input[type="search"] {
   font-size: 16px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -81,32 +80,32 @@ input[type="search"] {
   background-color: #fff;
   margin-top: 15px;
 }
-.mui-content > .mui-table-view:first-child {
+.app_search .mui-content > .mui-table-view:first-child {
     margin-top: 0;
 }
-.oa-contact-cell.mui-table .mui-table-cell {
+.app_search .oa-contact-cell.mui-table .mui-table-cell {
   padding: 11px 0;
   vertical-align: middle;
   margin-left: 20px;
 }
-.oa-contact-cell {
+.app_search .oa-contact-cell {
   position: relative;
   margin: -11px 0;
 }
-.oa-contact-avatar {
+.app_search .oa-contact-avatar {
   width: 75px;
 }
-.oa-contact-avatar img {
+.app_search .oa-contact-avatar img {
   width: 124px;
   height: 82px;
 }
-.oa-contact-content {
+.app_search .oa-contact-content {
   width: 100%;
 }
-.oa-contact-name {
+.app_search .oa-contact-name {
   margin-right: 20px;
 }
-.oa-contact-name, oa-contact-position {
+.app_search .oa-contact-name, oa-contact-position {
   float: left;
 }
 </style>

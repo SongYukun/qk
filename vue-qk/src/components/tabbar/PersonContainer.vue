@@ -2,7 +2,7 @@
   <div class="app_person">
     <header class="mui-bar mui-bar-nav">
 			<header id="head" class="mui-bar mui-bar-transparent">
-				<router-link class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" to="/account">
+				<router-link class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" to="/home">
 				</router-link>
 				<h1 class="mui-title">个人中心</h1>
 			</header>
@@ -12,8 +12,10 @@
           <a href="javascript:;">
               <img class="mui-media-object mui-pull-left" src="../../assets/head.png">
               <div class="mui-media-body">
-                  <span>dingidng</span>
-                  <p>欢迎您登录网上课堂</p>
+                  <!--<span>dingidng</span>
+                  <p>欢迎您登录网上课堂</p>-->
+                  <span @click="login()">登录</span>
+                  <span @click="register()">注册</span>
               </div>
           </a>
       </li>
@@ -46,22 +48,21 @@
         uname:""
       }
     },
-    mounted() {
-      var self=this;
-      this.$http.post("http://localhost:3000/users/islogin").then(res=>{
-        if(res.data.ok==1){
-          self.islogin=true;
-          self.uname=res.data.uname;
-        }
-        else
-          self.islogin=false;
-      })
-    },
     methods:{
-      
+      login(){
+        this.$router.push({
+          path:"/login"
+        })
+      },
+      register(){
+        this.$router.push({
+          path:"/register"
+        })
+      }
     },
     created(){
-        
+        /*this.login();
+        this.register();*/
     }
   }
 </script>
@@ -69,7 +70,7 @@
 /* .mui-table-view {
   margin-top: 44px;
 } */
-.mui-table-view-cell {
+.app_person .mui-table-view-cell {
   padding: 15px 15px;
 }
 </style>

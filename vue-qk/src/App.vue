@@ -14,9 +14,9 @@
         <span class="mui-icon mui-icon-extra mui-icon-extra-xiaoshuo"></span>
         <span class="mui-tab-label">我的学习</span>
       </router-link>
-      <router-link class="mui-tab-item" to="/account">
+      <router-link class="mui-tab-item" to="/person">
         <span class="mui-icon mui-icon-contact"></span>
-        <span class="mui-tab-label">账号</span>
+        <span class="mui-tab-label">个人中心</span>
       </router-link>
     </nav>
  </div>

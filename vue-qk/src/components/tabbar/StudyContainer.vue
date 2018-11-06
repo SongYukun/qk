@@ -26,26 +26,26 @@
   }
 </script>
 <style>
-.shop{
+.app_study .shop{
 	margin-top: 45px;
 	padding: 5px 15px;
 	background: #fff;
 	display: flex;
 	justify-content: flex-start;
 }
-.s_l img{
+.app_study .s_l img{
 	width: 161px;
 	height: 89px;
 }
-.s_r{
+.app_study .s_r{
 	padding-left: 15px;
 }
-.s_r span{
+.app_study .s_r span{
 	display: inline-block;
 	padding-top: 6px;
 	font-size: 16px;
 }
-.s_r p{
+.app_study .s_r p{
 	margin-top: 7px;
 	color: #1eb41f;
 }

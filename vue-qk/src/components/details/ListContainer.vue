@@ -48,32 +48,32 @@
   }  
 </script>
 <style>
-.mui-content > .mui-table-view:first-child {
+.app-list .mui-content > .mui-table-view:first-child {
     margin-top: 0;
 }
-.oa-contact-cell.mui-table .mui-table-cell {
+.app-list .oa-contact-cell.mui-table .mui-table-cell {
   padding: 11px 0;
   vertical-align: middle;
   margin-left: 20px;
 }
-.oa-contact-cell {
+.app-list .oa-contact-cell {
   position: relative;
   margin: -11px 0;
 }
-.oa-contact-avatar {
+.app-list .oa-contact-avatar {
   width: 75px;
 }
-.oa-contact-avatar img {
+.app-list .oa-contact-avatar img {
   width: 124px;
   height: 82px;
 }
-.oa-contact-content {
+.app-list .oa-contact-content {
   width: 100%;
 }
-.oa-contact-name {
+.app-list .oa-contact-name {
   margin-right: 20px;
 }
-.oa-contact-name, oa-contact-position {
+.app-list .oa-contact-name, oa-contact-position {
   float: left;
 }
 </style>
