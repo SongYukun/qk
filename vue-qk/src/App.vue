@@ -11,7 +11,9 @@
         <span class="mui-tab-label">首页</span>
       </router-link>
       <router-link class="mui-tab-item" to="/study">
-        <span class="mui-icon mui-icon-extra mui-icon-extra-xiaoshuo"></span>
+        <span class="mui-icon mui-icon-extra mui-icon-extra-xiaoshuo">
+          <span class="mui-badge">{{$store.getters.optCount}}</span>
+        </span>
         <span class="mui-tab-label">我的学习</span>
       </router-link>
       <router-link class="mui-tab-item" to="/person">

@@ -23,7 +23,7 @@
 				</div>
 			</form>
 			<div class="mui-content-padded">
-				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary" @click="login" type="submit">注册</button>
+				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary" @click="register" type="submit">注册</button>
 			</div>
 		</div>
     </div>
@@ -35,14 +35,13 @@
             return {}
         },
         methods:{
-            login(){
+            register(){
                 this.$router.push({
                 	path:"/login"
                 })
             }
         },
         created(){
-           this.login(); 
         }
     }
 </script>

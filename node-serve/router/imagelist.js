@@ -28,11 +28,11 @@ router.get("/productt",(req,res)=>{
 })
 router.get("/productt1",(req,res)=>{
   var id=req.query.id;
-  console.log(id)
+  //console.log(id)
   var sql="SELECT id, title, img_url, href, avatar, detail, per, make FROM qk_product WHERE avatar=1 and id=?";
   pool.query(sql,[id],(err,result)=>{
     if(err) throw err;
-    console.log(result)
+    //console.log(result)
     res.send({code:1,msg:result})
   })
 })
@@ -46,11 +46,11 @@ router.get("/productb",(req,res)=>{
 })
 router.get("/productb1",(req,res)=>{
   var id=req.query.id;
-  console.log(id)
+  //console.log(id)
   var sql="SELECT id, title, img_url, href, avatar, detail, per, make FROM qk_product WHERE avatar=2 and id=?";
   pool.query(sql,[id],(err,result)=>{
     if(err) throw err;
-    console.log(result)
+    //console.log(result)
     res.send({code:1,msg:result})
   })
 })

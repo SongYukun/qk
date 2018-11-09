@@ -4,7 +4,7 @@
     	<header id="head" class="mui-bar mui-bar-transparent">
 				<router-link class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" to="/home">
 				</router-link>
-				<h1 class="mui-title">课程检索</h1>
+				<h1 class="mui-title">课程详情</h1>
 			</header>
 		</header>
     <div style="height:45px;"></div>
@@ -27,11 +27,11 @@
         <p>课程简介</p>
         <p v-html='detail[0].detail'></p>
       </div>
-      <button class="d_btn" @click="jumpstudy"><span>立即参加</span></button>
+      <button class="d_btn" @click="addStudy"><span>立即参加</span></button>
     </div>
   </div> 
 </template>
-<script>
+<script scoped>
   export default{
     data(){
       return {
@@ -44,9 +44,9 @@
         var url="http://127.0.0.1:3000/imagelist/productt1?id="+this.id;
         this.$http.get(url).then(result=>{
           if(result.body.code==1){
-             console.log(result.body.msg)
+             //console.log(result.body.msg)
             this.detail=result.body.msg;
-             console.log(this.detail)
+            // console.log(this.detail)
           }else{
             Toast("图片加载失败...");
           }
@@ -56,19 +56,18 @@
         var url="http://127.0.0.1:3000/imagelist/productb1?id="+this.id;
         this.$http.get(url).then(result=>{
           if(result.body.code==1){
-             console.log(result.body.msg)
+             //console.log(result.body.msg)
             this.detail=result.body.msg;
-             console.log(this.detail)
+             //console.log(this.detail)
           }else{
             Toast("图片加载失败...");
           }
         })
       },
-      jumpstudy(){
-        this.$router.push({
-          path:"/study"
-        })
-      },
+      addStudy(){
+        //修改vuex中共享数据
+        this.$store.commit("increment");
+      }
     },
     created(){
       this.getDetail();
@@ -85,6 +84,12 @@
 .app-details-list .details-title>img{
   width: 100%;
   height: 211px;
+}
+.mui-bar-transparent {
+    top: 0;
+    /* background-color: rgba(247,247,247,0); */
+    /* -webkit-box-shadow: none; */
+    box-shadow: none;
 }
 .app-details-list .details-title .fg{
   width: 100%;

@@ -14,8 +14,8 @@
               <div class="mui-media-body">
                   <!--<span>dingidng</span>
                   <p>欢迎您登录网上课堂</p>-->
-                  <span @click="login()">登录</span>
-                  <span @click="register()">注册</span>
+                  <span @click="login">登录</span>
+                  <span @click="register">注册</span>
               </div>
           </a>
       </li>
@@ -61,8 +61,6 @@
       }
     },
     created(){
-        /*this.login();
-        this.register();*/
     }
   }
 </script>

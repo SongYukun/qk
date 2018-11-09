@@ -47,9 +47,7 @@
       <h4>职场发展</h4>
       <ul class="mui-table-view mui-grid-view">  
         <div style="padding:10px 0 0 10px;">
-          <router-link :to="lesson[0].href">
-            <img src="../../assets/index/sub05.png" style="width:100%;">
-          </router-link>
+          <img src="../../assets/index/sub05.png" style="width:100%;">
           <p style="margin-left:10px;color:#000;font-size:15px">{{lesson[0].title}}</p>
         </div>
         <li v-for="item in productb" :key="item.id" @click="getProducttList2(item.id)" class="mui-table-view-cell mui-media mui-col-xs-6">
@@ -62,7 +60,7 @@
 		</div>
   </div>
 </template>
-<script>
+<script scoped>
   //加载当前组件需要第三方模块
   import {Toast} from "mint-ui";
   export default{
