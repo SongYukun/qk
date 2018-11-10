@@ -27,3 +27,4 @@ export default new Router({
     {path:'*',redirect:"/home"}
   ],linkActiveClass:"mui-active" //覆盖默认路由高亮类
 })
+

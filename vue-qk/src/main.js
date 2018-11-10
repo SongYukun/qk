@@ -30,6 +30,7 @@ Vue.component(Search.name, Search);
 import VueResource from "vue-resource";
 //4.加载VueResource
 Vue.use(VueResource);
+
 //5.定义全局过滤器
 Vue.filter("dateFormat",function(datestr,pattern="YYYY-MM-DD"){
   return new Date(datestr).toLocaleString();
