@@ -5,7 +5,6 @@ import Router from 'vue-router'
 import HomeContainer from "../components/tabbar/HomeContainer"
 import StudyContainer from "../components/tabbar/StudyContainer"
 import PersonContainer from "../components/tabbar/PersonContainer"
-import LoginContainer from "../components/person/LoginContainer"
 import RegisterContainer from "../components/person/RegisterContainer"
 import DetailContainer from "../components/details/DetailContainer"
 import ListContainer from "../components/details/ListContainer"
@@ -19,7 +18,6 @@ export default new Router({
     {path:'/home',component:HomeContainer},
     {path:'/study',component:StudyContainer},
     {path:'/person',component:PersonContainer},
-    {path:'/login',component:LoginContainer},
     {path:'/register',component:RegisterContainer},
     {path:'/home/details/list',component:ListContainer},
     {path:'/home/details/DetailList/:id',component:DetailContainer},

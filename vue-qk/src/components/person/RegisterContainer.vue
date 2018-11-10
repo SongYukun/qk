@@ -1,73 +1,107 @@
-<template>   
-    <div class="app_register">
-        <header class="mui-bar mui-bar-nav">
-			<header id="head" class="mui-bar mui-bar-transparent">
-				<router-link class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" to="/login">
-				</router-link>
-				<h1 class="mui-title">注册</h1>
-			</header>
+<template>
+    <!--注册-->
+    <div class="app_user">
+        <header id="header" class="mui-bar mui-bar-transparent">
+			<router-link class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" to="/user"></router-link>
 		</header>
-		<div class="mui-content" style="padding-top:44px !important;">
-			<form class="mui-input-group" action="/add">
-				<div class="mui-input-row">
-					<label>账号</label>
-					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入账号" name="uname">
-				</div>
-				<div class="mui-input-row">
-					<label>密码</label>
-					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码" name="upwd">
-				</div>
-				<div class="mui-input-row">
-					<label>确认</label>
-					<input id='password_confirm' type="password" class="mui-input-clear mui-input" placeholder="请确认密码" name="upwd">
-				</div>
-			</form>
-			<div class="mui-content-padded">
-				<button id='reg' class="mui-btn mui-btn-block mui-btn-primary" @click="register" type="submit">注册</button>
+		<div class="app_register"  id="appsearch">
+			<header class="mui-bar mui-bar-nav">
+				<header id="head" class="mui-bar mui-bar-transparent">
+				<h1 class="mui-title">注册</h1>
+				</header>
+			</header>
+			<div style="margin-top:50px;">
+				<input type="text" name="uname" placeholder="请输入您的户名" v-model="uname" @blur="unameblur()"><br>
+				<input type="password" name="upwd" placeholder="请输入您的6~9位数密码"  v-model="upwd"><br>
+				<input type="password" name="cpwd" placeholder="请确认您的密码"  v-model="cpwd"><br>
+				<mt-button type="primary" size="large" @click="myregister">注册</mt-button>
 			</div>
-		</div>
-    </div>
+		</div>  
+    </div> 
 </template>
 <script>
-	import { Toast } from 'mint-ui';
+    import {Toast} from "mint-ui";
     export default{
+        name:"register",
         data(){
-            return {}
-        },
-        methods:{
-            register(){
-                this.$router.push({
-                	path:"/login"
-                })
+            return {
+                uname:"",
+                upwd:"",
+                cpwd:"",
+                regnews:"",
+                isReg:false
             }
         },
+        methods:{
+            myregister(){
+                if(this.uname=="" ||this.upwd=="" ||this.cpwd==""){
+                    Toast("请完善信息")
+                }else if(this.isReg){
+                    let _this=this;
+                    let url="http://127.0.0.1:3000/users/register";
+                    let data={'uname':this.uname,'upwd':this.upwd,'cpwd':this.cpwd}
+                    this.$http.post(url,data).then(result=>{
+                        if(result.body.code==1){
+                            Toast("注册成功");
+                            setTimeout(function(){
+                                _this.$router.push({path:"/person"})
+                            },500)
+                        }else{
+                            Toast(result.body.msg)
+                        }
+                    })
+                }
+            },
+             unameblur(){
+                if(!this.uname==""){
+                    let _this=this;
+                    let url="http://127.0.0.1:3000/users/checkUname";
+                    let data={'uname':this.uname}
+                    this.$http.post(url,data).then(result=>{
+                        if(result.body.code==1){
+							Toast("用户名已存在");
+							_this.isReg=false;
+                        }else{
+                            _this.regnews="";
+                            _this.isReg=true;
+                        }
+                    })
+                }
+            },
+         } ,   
         created(){
-        }
+            
+        } 
     }
 </script>
-<style>
-.app_register .area {
-    margin: 20px auto 0px auto;
+<style scoped>
+.search_title{
+	text-align:center;
+	padding-bottom:20px;
 }
-.app_register .mui-input-group:first-child {
-    margin-top: 20px;
+.search_title p{
+	color:black;
+	font-size:16px;
 }
-.app_register .mui-input-group label {
-    width: 22%;
+.search_login{
+	padding-top:25px;
+	display:flex;
+	justify-content: space-between;
 }
-.app_register .mui-input-row label~input,
-.app_register .mui-input-row label~select,
-.app_register .mui-input-row label~textarea {
-    width: 78%;
+.search_tip{
+	text-align: center;
+	padding-top:20px;
 }
-.app_register .mui-checkbox input[type=checkbox],
-.app_register .mui-radio input[type=radio] {
-    top: 6px;
+.search_other{
+	display:flex;
+	justify-content: space-around;
+	padding-top:50px;
 }
-.app_register .mui-content-padded {
-    margin-top: 25px;
+.search_other img{
+	width:32px;
+	height:32px;
 }
-.app_register .mui-btn {
-    padding: 10px;
+.mui-table-view-cell {
+	padding: 15px 15px;
 }
 </style>

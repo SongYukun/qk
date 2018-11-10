@@ -56,9 +56,7 @@
         var url="http://127.0.0.1:3000/imagelist/productb1?id="+this.id;
         this.$http.get(url).then(result=>{
           if(result.body.code==1){
-             //console.log(result.body.msg)
             this.detail=result.body.msg;
-             //console.log(this.detail)
           }else{
             Toast("图片加载失败...");
           }

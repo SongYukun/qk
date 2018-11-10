@@ -6,11 +6,12 @@ USE qk;
 CREATE TABLE qk_user(
   uid INT PRIMARY KEY AUTO_INCREMENT,
   uname VARCHAR(25),
-  upwd VARCHAR(32)
+  upwd VARCHAR(32),
+  cpwd VARCHAR(32)
 );
 INSERT INTO qk_user VALUES
-  (null,'dongdong','123'),
-  (null,'dingding','123456');
+  (null,'dongdong','147258','147258'),
+  (null,'dingding','123456','123456');
 
 #图片轮播表 qk_imagelist
 CREATE TABLE qk_imagelist(

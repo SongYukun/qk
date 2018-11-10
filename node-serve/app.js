@@ -26,4 +26,4 @@ app.use(session({
 }));
 app.use("/imagelist",imgList);
 app.use("/users",users);
-app.use("/list",list)
+app.use("/list",list);
